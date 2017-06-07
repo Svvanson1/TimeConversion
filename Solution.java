@@ -21,7 +21,7 @@ public class Solution {
         index += period;
     }
     return builder.toString();
-}
+} 
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
@@ -29,9 +29,11 @@ public class Solution {
         String AMorPM = time.replaceAll("[^a-zA-Z]", "");
         int digits = Integer.parseInt(time.replaceAll("[^0-9.]", ""));
         
-        if (AMorPM.equalsIgnoreCase("AM")) {
-            System.out.println(insertPeriodically(digits, ":", 2));
+        if (AMorPM.equalsIgnoreCase("AM") && !(digits <= 125959 || digits >= 120000) {
+            digits -= 10000;
+            System.out.println(insertPeriodicallyAM(digits, ":", 2));
         }
+        else if()
         else {
             digits += 120000;
             System.out.println(insertPeriodically(digits, ":", 2));
